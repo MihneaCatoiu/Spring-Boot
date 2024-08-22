@@ -18,7 +18,7 @@ import java.time.format.DateTimeFormatter;
 public class WeatherServiceImpl implements WeatherService {
 
     private final String apiValue = "http://api.weatherapi.com/v1/current.json?";
-    private final String key = "c95443508af34df68be161532231011";
+    private final String key = "b729ce3e5a144134b97171752241908";
 
     @Override
     public Weather getCityWeather(String city) throws IOException {

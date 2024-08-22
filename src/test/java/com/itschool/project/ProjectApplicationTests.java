@@ -17,4 +17,5 @@ class ProjectApplicationTests {
 		String greeting = greetingService.greet();
 		System.out.println(greeting);
 	}
+
 }
