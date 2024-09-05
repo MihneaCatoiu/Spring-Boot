@@ -1,6 +1,7 @@
 package com.itschool.project.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.itschool.project.exceptions.UserCreateException;
 import com.itschool.project.models.dtos.UserDTO;
 import com.itschool.project.models.entities.User;
 import com.itschool.project.repositories.UserRepository;
@@ -28,7 +29,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO createUser(UserDTO userDTO) {
         if (userDTO.getEmail().length() < 3) {
-            throw new RuntimeException("Invalid email!");
+            throw new UserCreateException("Invalid email!");
         }
         User userEntityToBeSaved = objectMapper.convertValue(userDTO, User.class);
         User userResponseEntity = userRepository.save(userEntityToBeSaved);
